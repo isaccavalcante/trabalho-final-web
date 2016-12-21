@@ -42,11 +42,11 @@ Cliente <br />
 </select> <br />
 
 Data: <input type="text" name="data" value="${data}" style="width:50%" readonly> <br />
-Moto: <input type="text" name="moto" style="width:50%"> <br />
-Placa:<input type="text" name="placa" style="width:50%"> <br />
-Pago: &nbsp;&nbsp;&nbsp;<input type="text" style="height:25px;width:50px" name="valorPago" class="texto_pago"> <br />
-Débito: <input type="text" style="height:25px;width:50px" name="debito" readonly class="texto_debito"> <br />
-Valor total: <input type="text" style="height:25px;width:50px" name="valorTotal" readonly class="texto_total"> <br />
+Moto: <input type="text" name="moto" value="" style="width:50%"> <br />
+Placa:<input type="text" name="placa" value="" style="width:50%"> <br />
+Pago: &nbsp;&nbsp;&nbsp;<input type="text" style="height:25px;width:50px" value="0" name="valorPago" class="texto_pago"> <br />
+Débito: <input type="text" style="height:25px;width:50px" name="debito" value="0" readonly class="texto_debito"> <br />
+Valor total: <input type="text" style="height:25px;width:50px" name="valorTotal" value="0" readonly class="texto_total"> <br />
 <input type="submit" value="Salvar" style="height:40px; width:150px">
 
 </td>

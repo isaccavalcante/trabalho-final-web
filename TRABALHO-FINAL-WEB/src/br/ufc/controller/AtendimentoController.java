@@ -105,11 +105,12 @@ public class AtendimentoController {
 		System.out.println("-->" + id);
 		Cliente cliente = clienteDAO.recuperar(id);
 		Atendimento a =  new Atendimento();
+		a.setData(tempoUtil.obterData());
 		a.setCliente(cliente);
-		a.setValorPago(valor);
-		a.setDebito(0.0);
+		a.setValorPago(valor*-1);
+		a.setDebito(valor);
 		atendimentoDAO.inserir(a);
-		return "redirect:listarAtendimentosClientes?id="+id;
+		return "redirect:listarAtendimentosCliente?id="+id;
 	}
 	
 	
