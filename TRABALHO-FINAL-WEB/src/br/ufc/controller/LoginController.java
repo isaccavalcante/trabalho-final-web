@@ -5,14 +5,15 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.IFuncionarioDAO;
 import br.ufc.model.Funcionario;
 import br.ufc.util.LoginUtil;
+import br.ufc.util.TempoUtil;
 
-@Transactional
+
 @Controller
 public class LoginController {
 
@@ -20,9 +21,16 @@ public class LoginController {
 	@Qualifier(value="funcionarioDAOHibernate")
 	private IFuncionarioDAO funcionarioDAO;
 	
+
+	@Autowired
+	private TempoUtil tempoUtil;
+
+	
 	
 	@RequestMapping("/menu")
-	private String menu(){
+	private String menu(Model model){
+		String s=tempoUtil.saudacao();
+		model.addAttribute("s", s);
 		return "menu";
 	}
 	
@@ -43,7 +51,7 @@ public class LoginController {
 			
 			if(f.getSenha().equals(hashSenha)){
 				session.setAttribute("funcionario_logado", f);
-				return "menu";
+				return "redirect:menu";
 			}
 		}
 		return "redirect:loginFormulario";

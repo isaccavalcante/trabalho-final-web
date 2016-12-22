@@ -18,11 +18,11 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<context:component-scan base-package="br.ufc.controller" />
 	<mvc:annotation-driven />
 	
-	<!-- 
+	<!--  
 	<mvc:interceptors>
 		<bean class="br.ufc.interceptor.AutorizaInterceptor"/>
 	</mvc:interceptors>
-	 --> 
+	-->
 	 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	

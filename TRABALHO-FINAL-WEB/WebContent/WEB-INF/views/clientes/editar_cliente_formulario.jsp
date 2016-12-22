@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width">
 <title> Editar Cliente - Neto Motos </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 
 <center> 
@@ -44,7 +44,7 @@
     </tr>
     <tr>
       <td align="right">Débito:</td>
-      <td align="left"><input type="text" name="divida" value="${cliente.divida}" /></td>
+      <td align="left"><input type="text" name="divida" readonly value="${cliente.divida}" /></td>
     </tr>
     <tr>
       <td align="right"> Foto: </td>

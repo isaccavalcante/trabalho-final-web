@@ -51,6 +51,9 @@ public class Atendimento {
 	//MANY TO MANY
 	*/
 
+	@Column(name="DESCRICAO")
+	private String descricao;
+	
 	@Column(name="MOTO")
 	private String moto;
 
@@ -146,9 +149,13 @@ public class Atendimento {
 	public void setDebito(Double debito) {
 		this.debito = debito;
 	}
-	
-	
-	
 
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 	
 }

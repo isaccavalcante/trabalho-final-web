@@ -6,10 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
-<title> Neto Motos - Estoque </title>
+<title> Neto Motos - Produtos </title>
 </head>
-<body>
-
+<body style="font-family:arial; font-size:12pt">
 <center> 
 <h2> Produtos </h2>
 

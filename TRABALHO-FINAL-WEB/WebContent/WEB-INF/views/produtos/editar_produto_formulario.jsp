@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width">
 <title> Editar Produto - Neto Motos </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 
 <center> 

@@ -23,8 +23,7 @@ public class TempoUtil {
 		Calendar calendario = Calendar.getInstance();
 		int hora = calendario.get(Calendar.HOUR_OF_DAY);
 		System.out.println(hora);
-		return "oi";
-		/*/
+		System.out.println("->" +hora);
 		if (hora >= 6 && hora < 12){
 			return "Bom dia";
 		}else if(hora >= 12 || hora < 18  ){
@@ -33,7 +32,7 @@ public class TempoUtil {
 			return "Boa noite";
 		}
 		return "Boa madrugada";
-		/*/
+		
 	}
 
 }

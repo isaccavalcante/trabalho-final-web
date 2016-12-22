@@ -32,6 +32,8 @@ public class ClienteController {
 	private String listarClientes(Model model){
 		List<Cliente> clientes = clienteDAO.listar();
 		model.addAttribute("clientes", clientes);
+		Double debito = clienteDAO.obterDebitoTotaldeTodos();
+		model.addAttribute("debito", debito);
 		return "clientes/listar_clientes";
 	}
 
@@ -75,7 +77,7 @@ public class ClienteController {
 			AulaFileUtil.saveFile(path, image);
 		}
 
-
+		cliente.setDivida(cliente.getDivida()*-1);
 		clienteDAO.inserir(cliente);
 		return "clientes/cadastrar_cliente_ok";
 	}

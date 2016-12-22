@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width">
 <title> Cadastrar </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 
@@ -16,7 +16,8 @@
 
 <h2>
 Funcionário cadastrado! <br />
-<a href="cadastrarFuncionarioFormulario"> Voltar </a>
+<a href="cadastrarFuncionarioFormulario"> Cadastrar novo Funcionario </a> <br/>
+<a href="menu"> Voltar ao Menu </a>
 </h2>
 <center>
  

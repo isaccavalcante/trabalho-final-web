@@ -8,14 +8,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <title> Neto Motos - Atendimento </title>
-
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
-<center> <h2> Atendimento </h2> </center>
+<center> <h2> Atendimento </h2> 
+<a href="menu"> Voltar ao Menu </a>
+</center>
 
 
-<form action="cadastrarAtendimento" method="post" enctype="multipart/form-data">	
+<form id="100" action="cadastrarAtendimento" method="post" enctype="multipart/form-data">	
 
 <table style="width:100%" >
 <tr >
@@ -40,14 +41,15 @@ Cliente <br />
     </c:forEach>
   </optgroup>
 </select> <br />
-
-Data: <input type="text" name="data" value="${data}" style="width:50%" readonly> <br />
-Moto: <input type="text" name="moto" value="" style="width:50%"> <br />
-Placa:<input type="text" name="placa" value="" style="width:50%"> <br />
+Descrição: <input type="text" name="descricao" value="" style="width:50%"> <br />
+Data: <input type="text" name="data" value="${data}" style="width:50%" readonly > <br />
+Moto: <input type="text" name="moto" value="" style="width:50%" value=""> <br />
+Placa:<input type="text" name="placa" value="" style="width:50%" value=""> <br />
 Pago: &nbsp;&nbsp;&nbsp;<input type="text" style="height:25px;width:50px" value="0" name="valorPago" class="texto_pago"> <br />
 Débito: <input type="text" style="height:25px;width:50px" name="debito" value="0" readonly class="texto_debito"> <br />
-Valor total: <input type="text" style="height:25px;width:50px" name="valorTotal" value="0" readonly class="texto_total"> <br />
-<input type="submit" value="Salvar" style="height:40px; width:150px">
+Total: <input type="text" style="height:25px;width:50px" name="valorTotal" value="0" readonly class="texto_total"> <br />
+<input type="button" class="cadastrar" value="Salvar" style="height:40px; width:150px">
+<input type="submit" style="visibility:hidden; height:0px;width:0px" class="cadastrar_escondido" value="Salvar escondido" >
 
 </td>
 
@@ -57,7 +59,7 @@ Valor total: <input type="text" style="height:25px;width:50px" name="valorTotal"
 		
 		<tr>
 			<td width="5%"><center><b>Item</b></center></td>
-			<td width="70%"><center><b>Descrição</b></center></td>
+			<td width="70%"><center><b>Produtos</b></center></td>
 			<td width="5%"><center><b>Preço</b></center></td>
 			<td width="5%"><center><b>Quant.</b></center></td>
 			<td width="5%"><center><b>Desconto</b></center></td>
@@ -71,7 +73,7 @@ Valor total: <input type="text" style="height:25px;width:50px" name="valorTotal"
 			<td >
 				<select style="width:100%" data-index="${i}" class="select_lista_prod" >
 				  <optgroup label="Produtos">
-				  	<option value="None" selected> </option>
+				  	<option value="" selected> </option>
 				  	<c:forEach var="produto" items="${produtos}">
 				    <option value="${produto.preco}"> ${produto.nome} - ${produto.referencia} </option>
 				  	</c:forEach>
@@ -99,12 +101,11 @@ Valor total: <input type="text" style="height:25px;width:50px" name="valorTotal"
 </td>
 </tr>
 </table>
+
 </form>
 
 
-
-<br />
-<button onclick="Imprimir()" style="height:60px;width:200px"> Imprimir pelo browser </button>
+<center> <button onclick="Imprimir()" style="height:45px;width:150px"> Imprimir </button> </center>
 
 <script>
 function Imprimir() {
@@ -118,7 +119,32 @@ function Imprimir() {
 	<script type="text/javascript">
 	$(".select_lista_prod").change(function(){
 		var preco = $(this).val();
-		$(".preco[data-index=" + $(this).attr("data-index") + "]").text(preco);		
+		$(".preco[data-index=" + $(this).attr("data-index") + "]").text(preco);
+		$(".quantidade[data-index=" + $(this).attr("data-index") + "]").val("1");
+		
+		
+		
+		// DANDO CERTO
+		var preco = parseFloat($(".preco[data-index=" + $(this).attr("data-index") + "]").text());
+		var quantidade = $(".quantidade").val();
+		$(".total[data-index=" + $(this).attr("data-index") + "]").text(parseFloat(preco * quantidade).toFixed(2));
+		
+		// SOMATORIO -->
+		var s = 0;
+		for (i = 1; i < ${param.linhas}+1; i++){
+			s += Number($(".total[data-index='" + i +"']").text());
+		}
+		$(".tf").text(s);
+		$(".texto_total").val(s);
+		
+		//
+		
+		// ATUALIZAR DEBITO
+		var pago = parseFloat($(".texto_pago").val())
+		var total = parseFloat($(".texto_total").val())
+		
+		$(".texto_debito").val(pago - total);
+		
 	});
 	
 	$(".quantidade").on("keyup",function(){	
@@ -126,13 +152,19 @@ function Imprimir() {
 		var quantidade = $(this).val();
 		$(".total[data-index=" + $(this).attr("data-index") + "]").text(parseFloat(preco * quantidade).toFixed(2));
 		
-		// EU QUE FIZ -->
+		// SOMATORIO -->
 		var s = 0;
 		for (i = 1; i < ${param.linhas}+1; i++){
 			s += Number($(".total[data-index='" + i +"']").text());
 		}
 		$(".tf").text(s);
 		$(".texto_total").val(s);
+		
+		// ATUALIZAR DEBITO
+		var pago = parseFloat($(".texto_pago").val())
+		var total = parseFloat($(".texto_total").val())
+		
+		$(".texto_debito").val(pago - total);
 		
 		
 	});
@@ -154,7 +186,38 @@ function Imprimir() {
 		console.log(quantidade);
 		console.log(desconto);
 		$(".total[data-index=" + $(this).attr("data-index") + "]").text(parseFloat( (preco * quantidade) -( (preco * quantidade) * (desconto/100)) ).toFixed(2));
+		
+		// SOMATORIO -->
+		var s = 0;
+		for (i = 1; i < ${param.linhas}+1; i++){
+			s += Number($(".total[data-index='" + i +"']").text());
+		}
+		$(".tf").text(s);
+		$(".texto_total").val(s);
+		
+		
+		// ATUALIZAR DEBITO
+		var pago = parseFloat($(".texto_pago").val())
+		var total = parseFloat($(".texto_total").val())
+		
+		$(".texto_debito").val(pago - total);		
+		
 	});
+	
+	
+ 	$(".cadastrar").click(function(){
+ 		var fun = $(".select_lista_fun").val();
+ 		var cli = $(".select_lista_cli").val();
+ 		
+ 		if (fun=="None"){
+ 			alert("Escolha um Funcionário!");
+ 		} else if (cli=="None") {
+ 			alert("Escolha um Cliente!");
+ 		} else {
+ 			$('.cadastrar_escondido').trigger('click');
+ 		}
+	});
+	
 	</script>
 </body>
 </html>

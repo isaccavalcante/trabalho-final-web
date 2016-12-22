@@ -20,7 +20,7 @@ import br.ufc.util.AulaFileUtil;
 @Controller
 public class MecanicoController {
 
-	
+
 	@Autowired
 	private IMecanicoDAO mecanicoDAO;
 
@@ -30,11 +30,6 @@ public class MecanicoController {
 	@RequestMapping("/listarMecanicos")
 	public String listarMecanicos(Model model){
 		List<Mecanico> mecanicos = mecanicoDAO.listar();
-		System.out.println("Controller ->");
-		for (Mecanico m: mecanicos){
-			System.out.println("\t "+m.getNome());
-			
-		}
 		model.addAttribute("mecanicos", mecanicos);
 		return "mecanicos/listar_mecanicos";
 	}
@@ -47,13 +42,13 @@ public class MecanicoController {
 
 	@RequestMapping("/editarMecanicoFormulario")
 	private String editarMecanicoFormulario(Long id, Model model){
-		System.out.println("controller> "+ id);
+
 
 		Mecanico f = mecanicoDAO.recuperar(id);	
 
 		model.addAttribute("mecanico", f);
 		return "mecanicos/editar_mecanico_formulario";
-		
+
 	}
 
 	@RequestMapping("/editarMecanico")

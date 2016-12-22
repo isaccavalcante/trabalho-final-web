@@ -8,12 +8,13 @@
 <meta name="viewport" content="width=device-width">
 <title> Cadastrar Funcionário </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 <img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>
 
 <h2> Cadastrar Funcionário </h2>
+<a href="menu"> Voltar ao Menu </a><br/><br/>
 
 <form action="cadastrarFuncionario" method="post" enctype="multipart/form-data">	
 
@@ -65,10 +66,10 @@
 	
 	<br />
 	
-	<input type="submit" value="SALVAR" style="height:40px; width:150px">
+	<input type="submit" value="Salvar" style="height:40px; width:150px">
 </form>
 <br /> 	<br />
-<a href="menu"> Voltar </a>
+
 </center>
 
 

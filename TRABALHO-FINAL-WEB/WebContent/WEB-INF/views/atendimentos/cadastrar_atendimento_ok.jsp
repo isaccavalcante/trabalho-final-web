@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width">
 <title> Cadastrar </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 <img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>
@@ -17,9 +17,10 @@
 <h2>
 Atendimento cadastrado!
 <br /> <br />
-<a href="menu"> Voltar </a>
+<a href="cadastrarAtendimentoFormulario?linhas=10"> Cadastrar novo Atendimento </a> <br/>
+<a href="menu"> Voltar ao Menu </a>
 </h2>
-<center>
+</center>
  
 </body>
 </html>

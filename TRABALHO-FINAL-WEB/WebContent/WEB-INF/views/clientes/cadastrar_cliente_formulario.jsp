@@ -8,12 +8,13 @@
 <meta name="viewport" content="width=device-width">
 <title> Cadastrar Cliente </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 <img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>
 
 <h2> Cadastrar Cliente </h2>
+<a href="menu"> Voltar ao Menu </a><br/><br/>
 
 <form action="cadastrarCliente" method="post" enctype="multipart/form-data">	
 
@@ -64,10 +65,10 @@
 
 	
 	<br />
-	<input type="submit" value="CADASTRAR" style="height:40px; width:150px">
+	<input type="submit" value="Cadastrar" style="height:40px; width:150px">
 </form>
 <br /> <br />
-<a href="menu"> Voltar </a>
+
 </center>
 
 

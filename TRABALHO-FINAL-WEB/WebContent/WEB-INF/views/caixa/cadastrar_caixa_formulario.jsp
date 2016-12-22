@@ -9,13 +9,16 @@
 <title> Neto Motos - Caixa </title>
 </head>
 
-<body>
+<body style="font-family:arial; font-size:12pt">
 
-<h2>Em construção.</h2>
+<h2>Não utilizar! Em construção...</h2>
 
+<a href="menu"> Voltar ao Menu </a>
+<br/>
 
 
 <form action="cadastrarCaixa">
+<br/>
 
 Data: ${data}
 <br />

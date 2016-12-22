@@ -25,6 +25,7 @@ public class CaixaDAOHibernate implements ICaixaDAO {
 		String hql = "select c from CAIXA as c where c.data = :var_data";
 		Query query = manager.createQuery(hql, Caixa.class);
 		query.setParameter("var_data", data);
+		@SuppressWarnings("unchecked")
 		List<Caixa> caixas = query.getResultList();
 		if (caixas!=null && caixas.size()>0){
 			return true;

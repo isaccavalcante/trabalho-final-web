@@ -66,14 +66,27 @@ public class ClienteDAOHibernate implements IClienteDAO {
 	}
 
 	@Override
-	public Double obterDebitoTotal(Long id) {
+	public Double obterDebitoTotalCliente(Long id) {
 		
 		Cliente cliente = this.recuperar(id);
-		Double total = 0.0;
+		Double total = cliente.getDivida();
 		for (Atendimento a:cliente.getAtendimentos()){
 			total += a.getDebito();
 		}
 
+		return total;
+	}
+
+	@Override
+	public Double obterDebitoTotaldeTodos() {
+		
+		String hql = "select c from CLIENTE as c";
+		List<Cliente> clientes = manager.createQuery(hql, Cliente.class).getResultList();
+		Double total = 0.0;
+		for (Cliente c:clientes){
+			total += c.getDivida();			
+		}
+		
 		return total;
 	}
 

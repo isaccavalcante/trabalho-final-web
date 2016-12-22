@@ -21,6 +21,7 @@ public class AmizadeDAOHibernate implements IAmizadeDAO{
 			manager.persist(amizade);
 		}
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Amizade> listarAmizadeId(Long id){
 		String hql = "select a from AMIZADE as a "
@@ -41,6 +42,7 @@ public class AmizadeDAOHibernate implements IAmizadeDAO{
 		query.setParameter("fonte_id", amizade.getUsuarioFonte().getId());
 		query.setParameter("alvo_id", amizade.getUsuarioAlvo().getId());
 		
+		@SuppressWarnings("unchecked")
 		List<Amizade> amizades = query.getResultList();
 		
 		if (amizades!=null && amizades.size()>0) {

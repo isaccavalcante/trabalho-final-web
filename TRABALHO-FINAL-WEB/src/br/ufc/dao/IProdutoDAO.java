@@ -2,7 +2,6 @@ package br.ufc.dao;
 
 import java.util.List;
 
-import br.ufc.model.Cliente;
 import br.ufc.model.Produto;
 
 public interface IProdutoDAO {

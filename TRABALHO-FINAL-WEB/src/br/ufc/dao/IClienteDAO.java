@@ -11,5 +11,6 @@ public interface IClienteDAO {
 	public Cliente recuperar(Long id);
 	public void editar(Cliente cliente);
 	public void excluir(Long id);
-	public Double obterDebitoTotal(Long id);
+	public Double obterDebitoTotalCliente(Long id);
+	public Double obterDebitoTotaldeTodos();
 }

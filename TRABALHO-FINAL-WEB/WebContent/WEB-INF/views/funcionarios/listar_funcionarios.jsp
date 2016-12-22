@@ -9,46 +9,19 @@
 <meta name="viewport" content="width=device-width">
 <title> Neto Motos - Funcionários</title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 <h2> Funcionários </h2>
-<img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>
+<br/>
+<a href="menu"> Voltar ao Menu</a> <br /> <br />
+<a href="cadastrarFuncionarioFormulario"> Cadastrar Funcionário </a>
 </center>
-<div align="center">
-<a href="menu"> Voltar </a> <br />
-<a href="cadastrarFuncionarioFormulario"> Cadastrar Funcionario </a>
-
-<form action="gerarPDFFuncionarios" method="POST">
-<input type="submit" value="Gerar PDF" style="height:30px;width:200px" onclick="pdf()">
-</form>
-
-<br />
-<button onclick="Imprimir()" style="height:30px;width:150px"> Imprimir pelo browser </button>
-
-
-<script>
-function pdf() {
-    alert("PDF de funcionarios não foi gerado! Não funciona (ainda).");
-}
-</script>
-
-<script>
-function Imprimir() {
-    window.print();
-}
-</script>
-
-
-
-
 <br />
 <br />
 
 
-<center> 
 <table border="1">
-
 		<tr>
 			<td width="7%"> <center> <b> Foto </b> </center> </td>
 			<td width="15%"> <center> <b> Nome </b> </center> </td>
@@ -80,7 +53,8 @@ function Imprimir() {
 
 
 <br/>
-</center>
+
+
 
  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">

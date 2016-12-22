@@ -8,18 +8,14 @@
 <meta name="viewport" content="width=device-width">
 <title> Neto Motos - Clientes</title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 <h2> Clientes </h2>
-
-<img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>
-</center>
-
-<div align="center">
-<a href="menu"> Voltar </a> <br />
+<br/>
+<a href="menu"> Voltar ao Menu</a> <br /> <br />
 <a href="cadastrarClienteFormulario"> Cadastrar Cliente </a>
-</div>
+</center>
 <br />
 <br />
 
@@ -30,21 +26,21 @@
 			<td width="25%"> <center> <b> Endereço </b> </center> </td>
 			<td width="15%"> <center> <b> Telefone </b> </center> </td>
 			<td width="5%"> <center> <b> Débito </b> </center> </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>			
+			<td width="5%"> <center> <b> Editar </b> </center> </td>
+			<!-- <td> </td>  --> 
+			<td width="5%"> <center> <b> Histórico </b> </center> </td>			
 		</tr>
 
 	<c:forEach var="cliente" items="${clientes}">
 		<tr>
-			<td><img width="100" height="100" src='<c:url value="/resources/images/${cliente.cpf}.png" />' /></td>
+			<td><center><img width="100" height="100" src='<c:url value="/resources/images/${cliente.cpf}.png" />' /></center></td>
 			<td>${cliente.nome} ${cliente.sobrenome}</td>
 			<td>${cliente.endereco}</td>
 			<td> <center> ${cliente.telefone} </center> </td>
 			<td> <center> ${cliente.divida} </center> </td>
-			<td><a href="editarClienteFormulario?id=${cliente.cliId}"> Editar</a></td>	
-			<td> Excluir <!-- <input type="button" class="lista_clientes" value="Excluir" data-index="${cliente.cliId}" />  --> </td>
-			<td><a href="listarAtendimentosCliente?id=${cliente.cliId}"> Atendimentos </a></td>
+			<td> <center> <a href="editarClienteFormulario?id=${cliente.cliId}"> Editar</a> </center></td>	
+			<!-- <td> Excluir  <input type="button" class="lista_clientes" value="Excluir" data-index="${cliente.cliId}" />   </td> -->
+			<td> <center> <a href="listarAtendimentosCliente?id=${cliente.cliId}"> Histórico </a>  </center> </td>
 		</tr>
 	</c:forEach>
 	

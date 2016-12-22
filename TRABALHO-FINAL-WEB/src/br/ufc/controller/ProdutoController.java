@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.ufc.dao.IProdutoDAO;
-import br.ufc.model.Cliente;
 import br.ufc.model.Produto;
 import br.ufc.util.AulaFileUtil;
 

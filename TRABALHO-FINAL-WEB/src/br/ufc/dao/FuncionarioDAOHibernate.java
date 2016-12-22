@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.ufc.model.Funcionario;
-import br.ufc.model.Mecanico;
 import br.ufc.util.LoginUtil;
 
 @Repository

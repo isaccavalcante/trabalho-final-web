@@ -8,18 +8,20 @@
 <meta name="viewport" content="width=device-width">
 <title> Cadastrar </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
-<center> 
-<img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>
+<center>  <img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200> </center>
 
 
 <h2>
-Cliente cadastrado!
-<br /> <br />
-<a href="cadastrarClienteFormulario"> Voltar </a>
-</h2>
 <center>
+Cliente cadastrado!
+</center>
+<br /> <br />
+<a href="cadastrarClienteFormulario"> Cadastrar novo Cliente </a> <br/>
+<a href="menu"> Voltar ao Menu </a>
+</h2>
+
  
 </body>
 </html>

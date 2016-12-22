@@ -8,13 +8,13 @@
 <meta name="viewport" content="width=device-width">
 <title> Neto Motos - Menu </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 
 <center> 
 <img width="200" height="200" src='<c:url value="/resources/images/logo.png" />' />
 <br/>
-Olá, ${funcionario_logado.nome}! <br />
+${s}, ${funcionario_logado.nome}! <br />
 <br />
 
  

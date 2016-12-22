@@ -44,6 +44,7 @@ public class ProdutoDAOHibernate implements IProdutoDAO{
 		String hql = "select p from PRODUTO as p where p.id = :var_id";
 		Query query = manager.createQuery(hql, Produto.class);
 		query.setParameter("var_id", id);
+		@SuppressWarnings("unchecked")
 		List<Produto> produtos = query.getResultList();
 		if (produtos!=null && produtos.size()>0){
 			return produtos.get(0);
@@ -60,6 +61,7 @@ public class ProdutoDAOHibernate implements IProdutoDAO{
 			String hql = "select p from PRODUTO as p where p.id = :var_id";
 			Query query = manager.createQuery(hql, Produto.class);
 			query.setParameter("var_id", pe.getId());
+			@SuppressWarnings("unchecked")
 			List<Produto> produtos = query.getResultList();
 			if (produtos!=null && produtos.size()>0){
 				resultado.add(produtos.get(0));

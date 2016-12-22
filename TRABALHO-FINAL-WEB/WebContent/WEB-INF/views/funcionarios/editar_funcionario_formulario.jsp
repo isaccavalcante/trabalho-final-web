@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width">
 <title> Editar Funcionário </title>
 </head>
-<body>
+<body style="font-family:arial; font-size:12pt">
 
 <center> 
 <img src='<c:url value="/resources/images/logo.png"/>' width=200, height=200>

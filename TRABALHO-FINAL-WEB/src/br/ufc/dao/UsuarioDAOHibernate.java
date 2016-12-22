@@ -43,6 +43,7 @@ public class UsuarioDAOHibernate implements IUsuarioDAO{
 		
 		Query query = manager.createQuery(hql, Usuario.class);
 		query.setParameter("var_login", login);
+		@SuppressWarnings("unchecked")
 		List<Usuario> usuarios = query.getResultList();
 		if (usuarios!=null && usuarios.size()>0){
 			return usuarios.get(0);

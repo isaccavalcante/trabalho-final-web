@@ -11,7 +11,6 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.ufc.model.Cliente;
 import br.ufc.model.Mecanico;
 
 @Repository
